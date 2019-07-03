@@ -18,6 +18,7 @@ ARM_SU =1550
 ARM_DROP_F = 975
 ARM_POW = 1130
 ARM_W = 1320
+ARM_ST = 2047
 #constants for the robots claw
 CLAW_P = 2 #The servo port number
 CLAW_O = 1100
@@ -65,7 +66,10 @@ def arm_fireman(step):
 
 def arm_drop_fireman(step):
 	move_servo_slow(ARM_P, ARM_U, ARM_DROP_F, step)
-        
+
+def arm_start(step):
+	move_servo_slow(ARM_P, ARM_U, ARM_ST, step)
+
 def claw_open(step):
 	move_servo_slow(CLAW_P, CLAW_C, CLAW_O, step)
         
@@ -74,5 +78,7 @@ def claw_close(step):
 
 def claw_half(step):
 	move_servo_slow(CLAW_P, CLAW_C, CLAW_H, step)
+
+
 
 
